@@ -1,0 +1,33 @@
+.emailList {
+  flex: 1;
+  overflow: scroll;
+}
+
+.emailList_settings {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0px;
+  border-bottom: 1px solid whitesmoke;
+  z-index: 100;
+  padding: 10px 20px;
+}
+
+.emailList_settings_Left .MuiSvgIcon-root {
+  height: 20px;
+}
+
+.emailList_settings_Right .MuiSvgIcon-root {
+  height: 20px;
+}
+
+.emailList_sections {
+  position: sticky;
+  top: 0;
+  display: flex;
+  background-color: white;
+  border-bottom: 1px solid whitesmoke;
+  width: 100%;
+  z-index: 101;
+}

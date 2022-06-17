@@ -1,0 +1,35 @@
+.sidebar_compose {
+  background-color: rgba(255, 255, 255, 0.905);
+  border-radius: 30px !important;
+  margin: 15px 0px 15px 10px !important;
+  color: rgb(104, 102, 102) !important;
+  box-shadow: 0px 2px 7px -2px rgba(0, 0, 0, 0.6);
+  padding: 10px 15px !important;
+  text-transform: capitalize !important;
+  font-weight: 600 !important;
+}
+
+.sidebar {
+  flex: 0.24;
+  margin-right: 15px;
+}
+
+.sidebar_footer {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 500px) {
+  .sidebar {
+    flex: 0.1;
+    margin-right: 5px;
+  }
+
+  .sidebar_footer {
+    margin-left: 20px;
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 7px;
+  }
+}

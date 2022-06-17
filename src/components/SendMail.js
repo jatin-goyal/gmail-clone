@@ -10,7 +10,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { create } from "@mui/material/styles/createTransitions";
 
 export default function SendMail() {
-  console.log(auth.currentUser.email);
+  // console.log(auth.currentUser.email);
   const emailsCollectionRef = collection(db, "emails");
   const dispatch = useDispatch();
   const {
@@ -24,6 +24,7 @@ export default function SendMail() {
     let timeNow = new Date();
 
     await addDoc(emailsCollectionRef, {
+      uid: auth.currentUser.uid,
       senderName: auth.currentUser.displayName,
       from: auth.currentUser.email,
       to: formData.to,
@@ -34,7 +35,7 @@ export default function SendMail() {
   };
 
   const onSubmit = (formData) => {
-    console.log(formData);
+    // console.log(formData);
     createEmail(formData);
     dispatch(closeSendMessage());
   };

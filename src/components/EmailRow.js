@@ -14,9 +14,11 @@ export default function EmailRow({ id, title, subject, time, description }) {
 
   let from = auth.currentUser.email;
   let senderName = auth.currentUser.displayName;
+  let uid = auth.currentUser.uid;
   const openMail = () => {
     dispatch(
       selectMail({
+        uid,
         id,
         from,
         senderName,

@@ -16,11 +16,20 @@ import MoreVert from "@mui/icons-material/MoreVert";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectOpenMail } from "../features/mailSlice";
+import { deleteDoc, doc } from "firebase/firestore";
+import { db } from "../firebase";
 
 export default function Mail() {
   let navigate = useNavigate();
   const selectedMail = useSelector(selectOpenMail);
-  console.log(selectedMail);
+  // console.log(selectedMail);
+
+  const deleteMail = async (id) => {
+    const userMail = doc(db, "emails", id);
+    await deleteDoc(userMail);
+    navigate("/");
+  };
+
   return (
     <div className="mail">
       <div className="mail_tools">
@@ -34,7 +43,7 @@ export default function Mail() {
           <IconButton>
             <ErrorIcon />
           </IconButton>
-          <IconButton>
+          <IconButton onClick={() => deleteMail(selectedMail?.id)}>
             <DeleteIcon />
           </IconButton>
           <IconButton>

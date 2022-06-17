@@ -75,10 +75,9 @@ export default function EmailList() {
               id={email.id}
               key={email.id}
               title={email.to}
-              // title="alphabet"
               subject={email.subject}
               description={email.message}
-              time={new Date(email.time?.seconds * 1000).toUTCString()}
+              time={new Date(email.time?.seconds * 1000).toString()}
             />
           );
         })}

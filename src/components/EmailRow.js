@@ -45,6 +45,7 @@ export default function EmailRow({ id, title, subject, time, description }) {
           <LabelImportant />
         </IconButton>
       </div>
+
       <h3 className="emailRow_title">{senderName}</h3>
       <div className="emailRow_message">
         <h4>
@@ -52,7 +53,6 @@ export default function EmailRow({ id, title, subject, time, description }) {
           <span className="emailRow_description">{description}</span>
         </h4>
       </div>
-
       <div className="time">{time}</div>
     </div>
   );

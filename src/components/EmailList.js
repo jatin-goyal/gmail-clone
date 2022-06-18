@@ -12,13 +12,22 @@ import "./EmailList.css";
 import MoreVert from "@mui/icons-material/MoreVert";
 import Section from "./Section";
 import EmailRow from "./EmailRow";
-import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../firebase";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice";
 
 export default function EmailList() {
   const [emailList, setEmailList] = useState([]);
+  const user = useSelector(selectUser);
   const emailsCollectionRef = collection(db, "emails");
-  const q = query(emailsCollectionRef, orderBy("time", "desc"));
+  const q = query(
+    emailsCollectionRef,
+    // where("to", "==", user.email),
+    orderBy("time", "desc")
+  );
+
+  // console.log(User);
 
   const getEmailList = async () => {
     const data = await getDocs(q);

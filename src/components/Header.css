@@ -54,3 +54,48 @@
 
   padding-right: 20px;
 }
+
+.emailDisplay {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.nameInitial {
+  text-align: center;
+  align-items: center;
+  padding: 7px 10px;
+  background-color: rgb(230, 140, 22);
+  width: 18px;
+  height: 20px;
+  color: white;
+  border-radius: 50px;
+  text-transform: capitalize;
+}
+
+.dropDown {
+  height: 50px;
+  position: absolute;
+  top: 0;
+  padding: 18px 30px;
+
+  opacity: 0;
+}
+
+.dropDown > span {
+  position: fixed;
+  top: 65px;
+  right: 55px;
+  background-color: white;
+  border: 1px solid rgb(233, 233, 233);
+  padding: 3px;
+  border-radius: 5px;
+  font-size: small;
+  opacity: 1;
+}
+
+.dropDown:hover {
+  opacity: 1;
+  transition: all 250ms ease 50ms;
+}

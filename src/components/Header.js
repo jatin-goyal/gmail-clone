@@ -21,6 +21,8 @@ export default function Header() {
     });
   };
 
+  // console.log(user);
+
   return (
     <div className="header">
       <div className="header_left">
@@ -46,7 +48,13 @@ export default function Header() {
           <NotificationsIcon />
         </IconButton>
 
-        <Avatar />
+        <div className="emailDisplay">
+          <div className="nameInitial">{user.displayName[0]}</div>
+          <div className="dropDown">
+            <span>{user.email}</span>
+          </div>
+        </div>
+
         <Button
           variant="contained"
           color="error"
